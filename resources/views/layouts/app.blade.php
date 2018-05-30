@@ -41,6 +41,9 @@
                         <li>
                             <a href="{{ route('list_kunci') }}" class="nav-link">Kunci</a>
                         </li>
+                        <li>
+                            <a href="{{ route('list_pengguna') }}" class="nav-link">Pengguna</a>
+                        </li>
                     </ul>
 
                     <!-- Right Side Of Navbar -->

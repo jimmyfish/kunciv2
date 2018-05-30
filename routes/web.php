@@ -31,4 +31,16 @@ Route::middleware(['auth'])->group(function () {
         Route::get('/hapus/{id}', 'Kunci\AksiKunciController@hapus')
             ->where('id', "[0-9]+")->name('hapus_kunci');
     });
+
+    Route::prefix('/pengguna')->group(function () {
+        Route::get('/', 'Pengguna\ListPenggunaController@index')->name('list_pengguna');
+
+        Route::match(['get', 'post'], '/create', 'Pengguna\CreatePenggunaController@index')->name('buat_pengguna');
+
+        Route::match(['get', 'post'], '/edit/{id}', 'Pengguna\AksiPenggunaController@edit')
+            ->where('id', "[0-9]+")->name('edit_pengguna');
+
+        Route::get('/hapus/{id}', 'Pengguna\AksiPenggunaController@hapus')
+            ->where('id', "[0-9]+")->name('hapus_pengguna');
+    });
 });

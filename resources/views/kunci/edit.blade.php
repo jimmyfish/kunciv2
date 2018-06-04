@@ -12,7 +12,12 @@
                         @csrf
 
                         <div class="form-group">
-                            <input type="text" name="nama_lokasi" id="nama_lokasi" class="form-control" value="{{ $kunci->nama_lokasi }}">
+                            <label for="nama_lokasi">Nama Lokasi</label>
+                        <input type="text" name="nama_lokasi" id="nama_lokasi" class="form-control" value="{{ $kunci->nama_lokasi }}">
+                        </div>
+                        <div class="form-group">
+                            <label for="keterangan">Keterangan</label>
+                            <input type="text" name="keterangan" id="keterangan" class="form-control" value="{{ $kunci->keterangan }}">
                         </div>
                         <div class="form-group">
                             <input type="submit" value="Update" class="btn btn-primary">

@@ -9,8 +9,4 @@ class Pengguna extends Model
     protected $table = 'pengguna';
 
     public $timestamps = FALSE;
-
-    protected $fillable = [
-        'nama',
-    ];
 }

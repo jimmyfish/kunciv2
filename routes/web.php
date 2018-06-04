@@ -23,24 +23,20 @@ Route::middleware(['auth'])->group(function () {
     Route::prefix('/kunci')->group(function () {
         Route::get('/', 'Kunci\ListKunciController@index')->name('list_kunci');
 
-        Route::match(['get', 'post'], '/create', 'Kunci\CreateKunciController@index')->name('buat_kunci');
+        Route::match(['get', 'post'], '/create', 'Kunci\CreateKunciController@index')->name('create_kunci');
 
-        Route::match(['get', 'post'], '/edit/{id}', 'Kunci\AksiKunciController@edit')
-            ->where('id', "[0-9]+")->name('edit_kunci');
+        Route::match(['get', 'post'], '/edit/{id}', 'Kunci\EditKunciController@index')->name('edit_kunci');
 
-        Route::get('/hapus/{id}', 'Kunci\AksiKunciController@hapus')
-            ->where('id', "[0-9]+")->name('hapus_kunci');
+        Route::get('/hapus/{id}', 'Kunci\DeleteKunciController@index')->name('delete_kunci');
     });
 
     Route::prefix('/pengguna')->group(function () {
         Route::get('/', 'Pengguna\ListPenggunaController@index')->name('list_pengguna');
 
-        Route::match(['get', 'post'], '/create', 'Pengguna\CreatePenggunaController@index')->name('buat_pengguna');
+        Route::match(['get', 'post'],'/create', 'Pengguna\CreatePenggunaController@index')->name('create_pengguna');
 
-        Route::match(['get', 'post'], '/edit/{id}', 'Pengguna\AksiPenggunaController@edit')
-            ->where('id', "[0-9]+")->name('edit_pengguna');
+        Route::match(['get', 'post'],'/edit/{id}', 'Pengguna\EditPenggunaController@index')->name('edit_pengguna');
 
-        Route::get('/hapus/{id}', 'Pengguna\AksiPenggunaController@hapus')
-            ->where('id', "[0-9]+")->name('hapus_pengguna');
+        Route::get('/hapus/{id}', 'Pengguna\DeletePenggunaController@index')->name('delete_pengguna');
     });
 });

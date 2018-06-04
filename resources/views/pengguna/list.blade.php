@@ -8,7 +8,7 @@
                 <div class="card-header">{{ __('Daftar Pengguna') }}</div>
 
                 <div class="card-body">
-                    <p><a href="{{ route('buat_pengguna') }}" class="btn btn-primary">Buat Baru</a></p>
+                    <p><a href="{{ route('create_pengguna') }}" class="btn btn-primary">Buat Baru</a></p>
 
                     <table class="table table-bordered">
                         <thead>
@@ -24,8 +24,9 @@
                                     <td>{{ $item->id }}</td>
                                     <td>{{ $item->nama }}</td>
                                     <td>
-                                        <a href="{{ route('edit_pengguna', ['id' => $item->id ]) }}" class="text-primary"><i class="fa fa-pencil"></i></a>&nbsp;
-                                        <a href="{{ route('hapus_pengguna', ['id' => $item->id ]) }}" class="text-danger"><i class="fa fa-trash"></i></a>
+                                        <a href="{{ route('edit_pengguna', ['id' => $item->id ]) }}">EDIT</a>
+                                        <a href="{{ route('delete_pengguna', ['id' => $item->id ]) }}">HAPUS</a>
+                                        {{-- <a href="{{ route('hapus_pengguna', ['id' => $item->id ]) }}" class="text-danger"><i class="fa fa-trash"></i></a> --}}
                                     </td>
                                 </tr>
                             @endforeach

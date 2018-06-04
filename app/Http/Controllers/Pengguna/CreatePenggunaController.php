@@ -16,10 +16,8 @@ class CreatePenggunaController extends Controller
             $pengguna->nama = $request->nama;
 
             $pengguna->save();
-
-            return redirect()->route('list_pengguna');
         }
-
+        
         return view('pengguna.create');
     }
 }

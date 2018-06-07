@@ -39,4 +39,11 @@ Route::middleware(['auth'])->group(function () {
 
         Route::get('/hapus/{id}', 'Pengguna\DeletePenggunaController@index')->name('delete_pengguna');
     });
+
+    Route::prefix('/data-pinjaman')->group(function () {
+        Route::get('/', 'DataPinjaman\ListDataPinjamanController@index')->name('list_data_pinjaman');
+
+        Route::match(['get', 'post'], '/create', 'DataPinjaman\CreateDataPinjamanController@index')->name('create_data_pinjaman');
+        Route::match(['get', 'post'], '/kembali', 'DataPinjaman\KembalikanDataPinjamanController@index')->name('kembalikan_data_pinjaman');
+    });
 });

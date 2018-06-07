@@ -32,8 +32,12 @@
                                         <td><span class="badge badge-warning">Tidak</span></td>
                                     @endif
                                     <td>
-                                        <a href="{{ route('edit_kunci', ['id' => $item->id ]) }}">EDIT</a> |
-                                        <a href="{{ route('delete_kunci', ['id' => $item->id ]) }}">HAPUS</a>
+                                        <a href="{{ route('edit_kunci', ['id' => $item->id ]) }}">
+                                            <i class="fa fa-pencil"></i>
+                                        </a> |
+                                        <a href="{{ route('delete_kunci', ['id' => $item->id ]) }}" class="text-danger">
+                                            <i class="fa fa-trash"></i>
+                                        </a>
                                     </td>
                                 </tr>
                             @endforeach

@@ -44,6 +44,9 @@
                         <li>
                             <a href="{{ route('list_pengguna') }}" class="nav-link">Pengguna</a>
                         </li>
+                        <li>
+                            <a href="{{ route('list_data_pinjaman') }}" class="nav-link">Data Pinjaman</a>
+                        </li>
                     </ul>
 
                     <!-- Right Side Of Navbar -->

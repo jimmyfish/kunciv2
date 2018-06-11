@@ -16,6 +16,7 @@
                                 <th>No.</th>
                                 <th>Nama</th>
                                 <th>Keterangan</th>
+                                <th>Region</th>
                                 <th>Tersedia</th>
                                 <th>Aksi</th>
                             </tr>
@@ -26,6 +27,7 @@
                                     <td>{{ $item->id }}</td>
                                     <td>{{ $item->nama_lokasi }}</td>
                                     <td>{{ $item->keterangan }}</td>
+                                    <td>{{ $item->region->nama_region }}</td>
                                     @if ($item->is_available == 1)
                                         <td><span class="badge badge-success">Ya</span></td>
                                     @else

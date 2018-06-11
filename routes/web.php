@@ -46,4 +46,18 @@ Route::middleware(['auth'])->group(function () {
         Route::match(['get', 'post'], '/create', 'DataPinjaman\CreateDataPinjamanController@index')->name('create_data_pinjaman');
         Route::match(['get', 'post'], '/kembali', 'DataPinjaman\KembalikanDataPinjamanController@index')->name('kembalikan_data_pinjaman');
     });
+
+    Route::prefix('/region')->group(function () {
+        Route::get('/', 'Region\ListRegionController@index')->name('list_region');
+
+        Route::match(['get', 'post'],'/create', 'Region\CreateRegionController@index')->name('create_region');
+
+        Route::match(['get', 'post'],'/edit/{id}', 'Region\EditRegionController@index')->name('edit_region');
+
+        Route::get('/hapus/{id}', 'Region\DeleteRegionController@index')->name('delete_region');
+    });
+
+    Route::prefix('/api')->group(function () {
+        Route::get('/kunci-result/{pengguna_id}', 'Api\ListKunciAsRegionController@index')->name('api_kunci');
+    });
 });

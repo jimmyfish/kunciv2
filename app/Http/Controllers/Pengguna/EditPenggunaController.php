@@ -15,19 +15,25 @@ class EditPenggunaController extends Controller
          */
         $pengguna = Pengguna::find($request->id);
 
-        /**
-         * Menyimpan data sesudah di edit.
-         * Method = POST, karena Edit adalah FORM.
-         */
-        if ($request->isMethod('post')) {
-            $pengguna->nama = $request->nama;
-
+        if ($pengguna instanceof Pengguna) {
             /**
-             * Ini untuk menyimpan, JANGAN LUPA.
+             * Menyimpan data sesudah di edit.
+             * Method = POST, karena Edit adalah FORM.
              */
-            $pengguna->save();
-        }
+            if ($request->isMethod('post')) {
+                $pengguna->nama = $request->nama;
+                $pengguna->alamat = $request->alamat;
+                $pengguna->no_telp = $request->no_telp;
 
-        return view('pengguna.edit')->with('pengguna', $pengguna);
+                /**
+                 * Ini untuk menyimpan, JANGAN LUPA.
+                 */
+                $pengguna->save();
+            }
+
+            return view('pengguna.edit')->with('pengguna', $pengguna);
+        } else {
+            return 'Data not Valid!';
+        }
     }
 }

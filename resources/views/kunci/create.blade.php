@@ -20,6 +20,14 @@
                             <input type="text" name="keterangan" id="keterangan" class="form-control">
                         </div>
                         <div class="form-group">
+                            <label for="region_id">Region</label>
+                            <select name="region_id" id="region_id" class="form-control">
+                                @foreach ($region as $item)
+                                    <option value="{{ $item->id }}">{{ $item->nama_region }}</option>
+                                @endforeach
+                            </select>
+                        </div>
+                        <div class="form-group">
                             <input type="submit" value="Daftarkan" class="btn btn-primary">
                         </div>
                     </form>

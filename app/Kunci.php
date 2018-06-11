@@ -4,6 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 use App\DataPinjaman;
+use App\Region;
 
 class Kunci extends Model
 {
@@ -14,5 +15,10 @@ class Kunci extends Model
     public function dataPinjaman()
     {
         return $this->hasMany(DataPinjaman::class);
+    }
+
+    public function region()
+    {
+        return $this->belongsTo(Region::class);
     }
 }

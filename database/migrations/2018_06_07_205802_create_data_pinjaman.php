@@ -16,11 +16,12 @@ class CreateDataPinjaman extends Migration
         Schema::create('data_pinjaman', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('kunci_id')->unsigned();
-            $table->foreign('kunci_id')->references('id')->on('kunci');
+            $table->foreign('kunci_id')->references('id')->on('kunci')->onDelete('cascade');
             $table->integer('pengguna_id')->unsigned();
-            $table->foreign('pengguna_id')->references('id')->on('pengguna');
+            $table->foreign('pengguna_id')->references('id')->on('pengguna')->onDelete('cascade');
             $table->dateTime('waktu_pinjam');
             $table->dateTime('waktu_kembali');
+            $table->boolean('is_proccessed');
         });
     }
 

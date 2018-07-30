@@ -17,6 +17,7 @@ class CreateKunci extends Migration
             $table->increments('id');
             $table->string('nama_lokasi');
             $table->boolean('is_available')->default(1);
+            $table->string('keterangan');
         });
     }
 

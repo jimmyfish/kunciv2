@@ -16,6 +16,8 @@ class CreatePengguna extends Migration
         Schema::create('pengguna', function (Blueprint $table) {
             $table->increments('id');
             $table->string('nama')->nullable(false);
+            $table->text('alamat')->nullable(true);
+            $table->string('no_telp')->nullable(true);
         });
     }
 

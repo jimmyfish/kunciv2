@@ -39,5 +39,5 @@
 @endsection
 
 @section('customJS')
-    <script src="{{ asset('js/data-pinjaman.min.js') }}"></script>
+    <script src="{{ asset('js/data-pinjaman.js') }}"></script>
 @endsection

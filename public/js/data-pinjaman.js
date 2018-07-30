@@ -13,6 +13,7 @@ $(function () {
             url: "/api/kunci-result/"+penggunaId,
             type: "GET",
             success: function (data) {
+                var htmlan = "";
                 if (data.length > 0) {
                     $.each(data, function (key, item) {
                         kunciContainer.removeClass('hide');
@@ -20,8 +21,9 @@ $(function () {
                         kunciSelection.removeAttr('disabled');
                         errorSpan.addClass('hide');
                         inpSubmit.removeAttr('disabled');
-                        kunciSelection.append('<option value="'+item.id+'">'+ item.nama_lokasi + ' - '+ item.keterangan +'</option>');
+                        htmlan += "<option value='"+ item.id +"'>"+ item.nama_lokasi + "-"+ item.keterangan +"</option>";
                     });
+                    kunciSelection.html(htmlan);
                 } else {
                     kunciContainer.removeClass('hide');
                     errorSpan.removeClass('hide');
